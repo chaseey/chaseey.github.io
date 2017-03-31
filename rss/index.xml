@@ -1,4 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://chaseey.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 30 Mar 2017 07:19:52 GMT</lastBuildDate><atom:link href="https://chaseey.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[start blog]]></title><description><![CDATA[<div class="sect1">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://chaseey.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 31 Mar 2017 13:45:12 GMT</lastBuildDate><atom:link href="https://chaseey.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[今天 scrapy 相关的问题记录]]></title><description><![CDATA[<h1 id="_py3_django_mysql" class="sect0">py3环境 django 使用 mysql源</h1>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">DATABASES = {
+  'default':{
+  ...
+      'ENGINE': 'django.db.backends.mysql',
+  ...
+  }
+}</code></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>pip install -e git+git://github.com/theatlantic/django-mysqlndb-backend.git#egg=django-mysqlndb-backend</pre>
+</div>
+</div>
+<h1 id="__" class="sect0">插入数据库出错</h1>
+<div class="paragraph">
+<p>向mysql中插入数据时出现异常</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>_mysql_exceptions.OperationalError: (1366, "Incorrect string value: '\xE4\xB8 ......' for column 'pageSnapshot' at row 1")</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>需要将表字符集修改为 <code>utf8_general_ci</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>mysql&gt; set names utf8;	# fix temporary</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code># my.cnf for mysql5.5
+[mysqld]
+character-set-server = utf8</code></pre>
+</div>
+</div>]]></description><link>https://chaseey.github.io2017-3-31-scrapy.adoc</link><guid isPermaLink="true">https://chaseey.github.io2017-3-31-scrapy.adoc</guid><category><![CDATA[scrapy]]></category><category><![CDATA[python3]]></category><category><![CDATA[pip]]></category><category><![CDATA[spider]]></category><dc:creator><![CDATA[kidd]]></dc:creator><pubDate>Thu, 30 Mar 2017 16:00:00 GMT</pubDate></item><item><title><![CDATA[start blog]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_first_post">first post</h2>
 <div class="sectionbody">
 <hr>
