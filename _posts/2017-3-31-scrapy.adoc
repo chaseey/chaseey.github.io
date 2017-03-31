@@ -1,0 +1,45 @@
+// = Your Blog title
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+// :hp-tags: HubPress, Blog, Open_Source,
+// :hp-alt-title: My English Title
+= 今天 scrapy 相关的问题记录
+:published_at: 2017-3-31
+:hp-tags: scrapy, python3, pip, spider
+
+# py3环境 django 使用 mysql源
+
+```python
+DATABASES = {
+  'default':{
+  ...
+      'ENGINE': 'django.db.backends.mysql',
+  ...
+  }
+}
+```
+
+	pip install -e git+git://github.com/theatlantic/django-mysqlndb-backend.git#egg=django-mysqlndb-backend
+    
+
+# 插入数据库出错
+向mysql中插入数据时出现异常
+
+	_mysql_exceptions.OperationalError: (1366, "Incorrect string value: '\xE4\xB8 ......' for column 'pageSnapshot' at row 1")
+
+
+需要将表字符集修改为 `utf8_general_ci`
+
+	mysql> set names utf8;	# fix temporary
+
+```
+# my.cnf for mysql5.5
+[mysqld]
+character-set-server = utf8
+```
+
+
+
+
+
