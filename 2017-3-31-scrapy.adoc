@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://chaseey.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//chaseey.github.io/themes/casper/assets/css/screen.css?v=1491208596726" />
+    <link rel="stylesheet" type="text/css" href="//chaseey.github.io/themes/casper/assets/css/screen.css?v=1491209841094" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://chaseey.github.io/2017-3-31-scrapy.adoc" />
@@ -183,6 +183,34 @@ sudo pip3 install -e git+git://github.com/theatlantic/django-mysqlndb-backend.gi
 character-set-server = utf8</code></pre>
 </div>
 </div>
+<h1 id="_sqlite" class="sect0">sqlite出错</h1>
+<div class="literalblock">
+<div class="content">
+<pre>No module named '_sqlite3'</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo pip3 install sqlite3  # install it</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>RuntimeError: Package 'sqlite3' must not be downloaded from pypi</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>原因： sqlite不是独立模拟， 是python一个内置模块， 所以更新python吧</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>yum install sqlite-devel
+cd /path/to/Python3.5-source-code/
+./configure  --enable-loadable-sqlite-extensions
+make
+make altinstall</code></pre>
+</div>
+</div>
         </section>
 
         <footer class="post-footer">
@@ -254,8 +282,8 @@ character-set-server = utf8</code></pre>
        
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
-    <script type="text/javascript" src="//chaseey.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1491208596726"></script>
-    <script type="text/javascript" src="//chaseey.github.io/themes/casper/assets/js/index.js?v=1491208596726"></script>
+    <script type="text/javascript" src="//chaseey.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1491209841094"></script>
+    <script type="text/javascript" src="//chaseey.github.io/themes/casper/assets/js/index.js?v=1491209841094"></script>
 
 </body>
 </html>

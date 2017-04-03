@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://chaseey.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 03 Apr 2017 08:36:36 GMT</lastBuildDate><atom:link href="https://chaseey.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[今天 scrapy 相关的问题记录]]></title><description><![CDATA[<h1 id="_py3_django_mysql" class="sect0">py3环境 django 使用 mysql源</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://chaseey.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 03 Apr 2017 08:57:21 GMT</lastBuildDate><atom:link href="https://chaseey.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[今天 scrapy 相关的问题记录]]></title><description><![CDATA[<h1 id="_py3_django_mysql" class="sect0">py3环境 django 使用 mysql源</h1>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">DATABASES = {
@@ -96,6 +96,34 @@ sudo pip3 install -e git+git://github.com/theatlantic/django-mysqlndb-backend.gi
 <pre class="highlight"><code># my.cnf for mysql5.5
 [mysqld]
 character-set-server = utf8</code></pre>
+</div>
+</div>
+<h1 id="_sqlite" class="sect0">sqlite出错</h1>
+<div class="literalblock">
+<div class="content">
+<pre>No module named '_sqlite3'</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo pip3 install sqlite3  # install it</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>RuntimeError: Package 'sqlite3' must not be downloaded from pypi</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>原因： sqlite不是独立模拟， 是python一个内置模块， 所以更新python吧</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>yum install sqlite-devel
+cd /path/to/Python3.5-source-code/
+./configure  --enable-loadable-sqlite-extensions
+make
+make altinstall</code></pre>
 </div>
 </div>]]></description><link>https://chaseey.github.io2017-3-31-scrapy.adoc</link><guid isPermaLink="true">https://chaseey.github.io2017-3-31-scrapy.adoc</guid><category><![CDATA[scrapy]]></category><category><![CDATA[python3]]></category><category><![CDATA[pip]]></category><category><![CDATA[spider]]></category><dc:creator><![CDATA[kidd]]></dc:creator><pubDate>Thu, 30 Mar 2017 16:00:00 GMT</pubDate></item><item><title><![CDATA[start blog]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_first_post">first post</h2>
