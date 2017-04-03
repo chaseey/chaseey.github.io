@@ -86,5 +86,23 @@ character-set-server = utf8
 
 
 
+# sqlite出错
+
+	No module named '_sqlite3'
+    
+	sudo pip3 install sqlite3  # install it
+    
+    RuntimeError: Package 'sqlite3' must not be downloaded from pypi
+    
+原因： sqlite不是独立模拟， 是python一个内置模块， 所以更新python吧
+```
+yum install sqlite-devel
+cd /path/to/Python3.5-source-code/
+./configure  --enable-loadable-sqlite-extensions
+make
+make altinstall
+```
+    
+    
 
 
